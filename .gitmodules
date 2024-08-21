@@ -1,0 +1,12 @@
+[submodule "AtomosUI"]
+	path = AtomosUI
+	url = https://github.com/Negronii/AtomosUI.git
+[submodule "cp-budgerigar"]
+	path = cp-budgerigar
+	url = https://github.com/Unimelb-audahm/cp-budgerigar.git
+[submodule "teamDayDay996"]
+	path = teamDayDay996
+	url = https://github.com/SWEN900072023/teamDayDay996.git
+[submodule "SafeNest"]
+	path = SafeNest
+	url = https://github.com/zlatax/SafeNest.git
