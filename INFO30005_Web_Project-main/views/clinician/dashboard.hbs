@@ -1,0 +1,59 @@
+
+<header>
+    <div class="wrap-top">
+        <div class="logo">
+            <img src="/logo.png" class="custom-logo">
+        </div>
+        <div class="headertext">
+            <p>Welcome to Diabetes@home</br>
+            {{#with data_cli}}
+            <p class="headername">{{this.screen_name}}</p>
+            {{/with}}
+        </div>
+        <form class="sign-out" action="/logoutClinician" method="post">
+            <button class="logout" type="submit">
+                sign out
+            </button>
+        </form>
+            
+        
+    </div>
+</header>
+
+<div class="wrap-content">
+    <table class="patient-table">
+	    <tbody>
+            <tr class="heading" id="heading1">
+		        <th>Patient table</th>
+	        </tr>
+            <tr class="heading" id="heading2">
+		        <th>Patient name</th>
+		        <th>blood glucose level<br>(nmol/L)</th>
+		        <th>weight<br>(Kg)</th>
+                <th>doses of insulin taken<br>(number of doses)</th>
+                <th>exercise<br>(steps)</th>
+	        </tr>
+
+            {{#each data}}
+	        <tr>
+		        <td><a href="/home/clinician_dashboard/patient/{{this._id}}">{{this.screen_name}}</a></td>
+		        <td {{#if (showColor this.blood_glucose_record)}} style="color: red;" {{/if}}>{{showText this.blood_glucose_record}}</td>
+		        <td {{#if (showColor this.weight_record)}} style="color: red;" {{/if}}>{{showText this.weight_record}}</td>
+                <td {{#if (showColor this.dose_of_insulin_taken_record)}} style="color: red;" {{/if}}>{{showText this.dose_of_insulin_taken_record}}</td>
+                <td {{#if (showColor this.exercise_record)}} style="color: red;" {{/if}}>{{showText this.exercise_record}}</td>
+	        </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <div class="wrap-right">
+        <a href="/home/clinician_dashboard/register_patient">
+            <div class="cbutton">register new patient</div>
+        </a>
+
+        <a href="/home/clinician_dashboard/commentlist">
+            <div class="cbutton">view comment list</div>
+        </a>
+    </div>
+
+</div>

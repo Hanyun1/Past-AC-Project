@@ -1,0 +1,87 @@
+{{#with data}}
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../patient_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Entry Today</div>
+    </div>
+</header>
+
+<div class="sign">Click to enter data today:</div>
+
+
+<div class="entity-grid">
+    
+    <a {{#unless this.blood_glucose_record.is_required}} style="display:none" {{/unless}}
+    {{#if (hasTodayData this.blood_glucose_record)}} style="pointer-events: none"  {{/if}}
+     href="./entry_today/glucose">
+        <div class="entity">
+            <div class="text">Blood Glucose</div>
+            <div class="text" style="font-size:medium">(nmol/L)</div>
+            <div class="value">
+                {{#if (hasTodayData this.blood_glucose_record)}}
+                    {{showText this.blood_glucose_record}}
+                {{else}}
+                <i class='bx bx-plus-circle'>
+                </i>
+                {{/if}}
+            </div>
+        </div>
+    </a>
+
+    <a {{#unless this.dose_of_insulin_taken_record.is_required }} style="display:none" {{/unless}}
+    {{#if (hasTodayData this.dose_of_insulin_taken_record)}} style="pointer-events: none"  {{/if}}
+     href="./entry_today/insulin">
+        <div class="entity">
+            <div class="text">Insulin</div>
+            <div class="text" style="font-size:medium">(doses)</div>
+            <div class="value">
+                {{#if (hasTodayData this.dose_of_insulin_taken_record)}}
+                    {{showText this.dose_of_insulin_taken_record}}
+                {{else}}
+                <i class='bx bx-plus-circle'>
+                </i>
+                {{/if}}
+            </div>
+        </div>
+    </a>
+
+    <a {{#unless this.weight_record.is_required }} style="display:none" {{/unless}}
+    {{#if (hasTodayData this.weight_record)}} style="pointer-events: none"  {{/if}}
+     href="./entry_today/weight">
+        <div class="entity">
+            <div class="text">Weight</div>
+            <div class="text" style="font-size:medium">(Kg)</div>
+            <div class="value">
+                {{#if (hasTodayData this.weight_record)}}
+                    {{showText this.weight_record}}
+                {{else}}
+                <i class='bx bx-plus-circle'>
+                </i>
+                {{/if}}
+            </div>
+        </div>
+    </a>
+
+    <a {{#unless this.exercise_record.is_required }} style="display:none" {{/unless}}
+    {{#if (hasTodayData this.exercise_record)}} style="pointer-events: none"  {{/if}}
+     href="./entry_today/exercise">
+        <div class="entity">
+            <div class="text">Exercise</div>
+            <div class="text" style="font-size:medium">(step)</div>
+            <div class="value">
+                {{#if (hasTodayData this.exercise_record)}}
+                    {{showText this.exercise_record}}
+                {{else}}
+                <i class='bx bx-plus-circle'>
+                </i>
+                {{/if}}
+            </div>
+        </div>
+    </a>
+
+</div> 
+{{/with}}

@@ -1,0 +1,153 @@
+{{#with data}}
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="/home/clinician_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">{{this.screen_name}}'s Information</div>
+    </div>
+</header>
+
+<div class="wrap-content">
+
+	<div class="wrap-left">
+
+		<table class="todaydata" >
+	    <tbody>
+            <tr class="heading" id="heading1">
+		        <th>{{this.screen_name}}'s data for today</th>
+	        </tr>
+            <tr class="heading" id="heading2">
+		        <th>type</th>
+		        <th>safe range</th>
+		        <th>value</th>
+                <th>comment</th>
+	        </tr>
+
+            {{#if this.blood_glucose_record.is_required}}
+	        <tr>
+		        <td>blood glucose level (nmol/L)</td>
+		        <td>{{this.blood_glucose_record.safe_threshold_min}} - {{this.blood_glucose_record.safe_threshold_max}}</td>
+                <td {{#if (showColor this.blood_glucose_record)}} style="color: red;" {{/if}}>{{showText this.blood_glucose_record}}</td>
+                <td>{{showComment this.blood_glucose_record.record}}</td>
+	        </tr>
+            {{else}}
+            <tr>
+		        <td>blood glucose level (nmol/L)</td>
+		        <td colspan="3">data not required</td>
+	        </tr>
+            {{/if}}
+
+            {{#if this.weight_record.is_required}}
+	        <tr>
+		        <td>weight (Kg)</td>
+		        <td>{{this.weight_record.safe_threshold_min}} - {{this.weight_record.safe_threshold_max}}</td>
+                <td {{#if (showColor this.weight_record)}} style="color: red;" {{/if}}>{{showText this.weight_record}}</td>
+                <td>{{showComment this.weight_record.record}}</td>
+	        </tr>
+            {{else}}
+            <tr>
+		        <td>weight (Kg)</td>
+		        <td colspan="3">data not required</td>
+	        </tr>
+            {{/if}}
+
+            {{#if this.dose_of_insulin_taken_record.is_required}}
+	        <tr>
+		        <td>doses of insulin taken (number of doses)</td>
+		        <td>{{this.dose_of_insulin_taken_record.safe_threshold_min}} - {{this.dose_of_insulin_taken_record.safe_threshold_max}}</td>
+                <td {{#if (showColor this.dose_of_insulin_taken_record)}} style="color: red;" {{/if}}>{{showText this.dose_of_insulin_taken_record}}</td>
+                <td>{{showComment this.dose_of_insulin_taken_record.record}}</td>
+	        </tr>
+            {{else}}
+            <tr>
+		        <td>doses of insulin taken (number of doses)</td>
+		        <td colspan="3">data not required</td>
+	        </tr>
+            {{/if}}
+
+            {{#if this.exercise_record.is_required}}
+	        <tr>
+		        <td>exercise (steps)</td>
+		        <td>{{this.exercise_record.safe_threshold_min}} - {{this.exercise_record.safe_threshold_max}}</td>
+                <td {{#if (showColor this.exercise_record)}} style="color: red;" {{/if}}>{{showText this.exercise_record}}</td>
+                <td>{{showComment this.exercise_record.record}}</td>
+	        </tr>
+            {{else}}
+            <tr>
+		        <td>exercise (steps)</td>
+		        <td colspan="3">data not required</td>
+	        </tr>
+            {{/if}}
+        </tbody>
+    	</table>
+
+        <table class="todaydata" id="profile">
+            <tbody>
+                <tr class="heading" id="heading1">
+                    <th>Information</th>
+                </tr>
+                <tr class="heading" id="heading2">
+                    <th>Type</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{this.given_name}} {{this.family_name}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{getAge this.year_of_birth}}</td>
+                </tr>
+                <tr>
+                    <td>Bio</td>
+                    <td>{{this.text_bio}}</td>
+                </tr>
+                <tr>
+                    <td>Support message</td>
+                    <td style="max-width:200px">{{this.support_message}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="todaydata" id="note">
+            <tbody>
+                <tr class="heading" id="heading1">
+                    <th>Clinical note</th>
+                </tr>
+                <tr class="heading" id="heading2">
+                    <th>Date</th>
+                    <th>message</th>
+                </tr>
+                {{#each this.clinical_notes}}
+                    <tr>
+                        <td>{{showDate this.when}}</td>
+                        <td style="max-width:200px">{{this.note}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+	</div>
+
+    
+	<div class="wrap-right">
+        <a href="./history/glucose/{{this._id}}">
+            <div class="cbutton">view data history</div>
+        </a>
+
+        <a href="./manage/{{this._id}}">
+            <div class="cbutton">manage patient</div>
+        </a>
+
+        <a href="./note/{{this._id}}">
+            <div class="cbutton">add clinical note</div>
+        </a>
+
+        <a href="./message/{{this._id}}">
+            <div class="cbutton" style="padding-top:28px">change support message</div>
+        </a>
+    </div>
+</div>
+{{/with}}

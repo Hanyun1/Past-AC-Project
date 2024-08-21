@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #e9effb;
+    min-height: 800px;
+    background-image: url("../../background.png");
+    background-size: cover;
+    --bar-color: white;
+    --body-color: #e9effb;
+    --light-box-color: rgb(243, 243, 243);
+    --body-darder-color: #d4e3fc;
+    --text-header-color: #405b8a;
+    --text-color: gray;
+    --box-shadow-color: #a0b7e0;
+    --trans: all 0.4s ease;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+td a {
+    text-decoration: underline;
+    color: darkblue;
+}
+
+.top-bar a:hover .text,
+a:hover i {
+    color: white;
+}
+
+.top-bar {
+    overflow: hidden;
+    box-shadow: 2px 2px;
+    box-shadow: #a0b7e0 5px 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 60px;
+    width: 100%;
+    background-color: var(--bar-color);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.top-bar .return {
+    display: inline-block;
+    margin: 17px;
+    background-color: var(--body-color);
+    border-radius: 15px;
+    box-shadow: #a0b7e0 2px 2px;
+    font-size: 25px;
+}
+
+.top-bar .name {
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--text-header-color);
+}
+
+.sign-out .logout:hover,
+.cbutton:hover {
+    color: #1c3355;
+    background-color: #f6f4f0;
+    transition: var(--trans);
+}
+
+.wrap-top {
+    padding: 20px;
+    height: 130px;
+}
+
+.logo {
+    margin-top: 19px;
+}
+
+.custom-logo {
+    margin-left: 60px;
+    float: left;
+    height: 86px;
+}
+
+.headertext {
+    float: left;
+    font-weight: bold;
+    font-size: 36px;
+    margin-left: 40px;
+}
+
+.headername {
+    float: left;
+    font-weight: bold;
+    font-size: 32px;
+    color: rgba(0, 0, 0, 0.418);
+}
+
+.sign-out {
+    float: right;
+    margin-right: 250px;
+    margin-top: 23px;
+}
+
+.sign-out .logout {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #1c3355;
+    color: white;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer .text {
+    background-color: #333;
+    padding: 14px;
+}
+
+.wrap-content {
+    min-height: 900px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.patient-table {
+    height: 400px;
+    margin-top: 15px;
+    margin-left: 77px;
+    border-radius: 13px;
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: white;
+    border-collapse: collapse;
+    margin-bottom: 80px;
+}
+
+.todaydata {
+    margin-left: 100px;
+    margin-top: 50px;
+    border-radius: 13px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+#profile {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+}
+
+#note {
+    overflow: hidden;
+    margin-left: 60px;
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 250px;
+    word-wrap: break-word;
+}
+
+.history-table {
+    margin-left: 80px;
+    margin-top: 50px;
+    border-radius: 13px;
+    background-color: white;
+    border-collapse: collapse;
+}
+
+.history-wrap-left {
+    float: left;
+}
+
+.history-table th {
+    min-width: 300px;
+}
+
+.history-table td {
+    min-width: 300px;
+}
+
+tbody .heading {
+    height: 40px;
+}
+
+tbody #heading1 {
+    font-size: 23px;
+}
+
+tbody #heading2 th {
+    background-color: #1c3355;
+    color: #f6f4f0;
+}
+
+th {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 160px;
+}
+
+td {
+    padding-left: 20px;
+    padding-right: 20px;
+    /* line-height: 2.5em; */
+    min-width: 160px;
+    text-align: center;
+    padding: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: #f6f4f0;
+}
+
+.wrap-right {
+    margin-top: 40px;
+    margin-left: 150px;
+    display: inline-block;
+}
+
+.cbutton {
+    font-size: large;
+    font-weight: bold;
+    color: #f6f4f0;
+    text-align: center;
+}
+
+.cbutton {
+    border-radius: 13px;
+    background-color: #1c3355;
+    height: 66px;
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 37px;
+}
+
+.wrap-left {
+    float: left;
+}
+
+#back {
+    font-size: large;
+    font-weight: bold;
+    background-color: #1c3355;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#back a {
+    color: #f6f4f0;
+}
+
+.manage {
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.manage .glucose {
+    line-height: 4;
+    margin: 60px;
+    margin-left: 80px;
+    float: left;
+}
+
+.manage .weight {
+    line-height: 4;
+    margin: 60px;
+    float: left;
+}
+
+.manage .insulin {
+    line-height: 4;
+    margin: 60px;
+    float: left;
+}
+
+.manage .exercise {
+    line-height: 4;
+    margin: 60px;
+    float: left;
+}
+
+.manage .button {
+    margin-top: 430px;
+    margin-left: 50%;
+}
+
+.manage .header {
+    font-size: large;
+    font-weight: bold;
+}
+
+.manage input {
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.manage button {
+    border-radius: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #1c3355;
+    color: white;
+}
+
+.content-note {
+    min-width: 60px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: 30px 0 70px 0;
+}
+
+.title-note {
+    font-size: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+.cbutton-n {
+    padding: 7px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 25px;
+    margin-top: 50px;
+    background-color: #1c3355;
+    color: #fff;
+}
+
+.note-box {
+    background-color: #fff;
+    padding: 20px;
+    width: 800px;
+    height: 300px;
+    margin-top: 10px;
+    font-size: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 2px 2px;
+    box-shadow: #1c3355 5px 5px;
+}

@@ -1,0 +1,202 @@
+{{#with data}}
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../{{this._id}}">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Manage patient</div>
+    </div>
+</header>
+
+<form class="manage" action="/home/clinician_dashboard/patient/manage/{{this._id}}" method="post" onsubmit="return toVaild()">
+
+    <div class="glucose">
+    <p class="header">blood glucose record</p>
+    <div>
+        <label for="glucose_is_required">required</label>
+        <input
+            id="glucose_is_required"
+            name="glucose_is_required"
+            type="checkbox"
+            {{#if this.blood_glucose_record.is_required}}
+                checked
+            {{/if}}
+        />
+    </div>
+    <div>
+        <label for="glucose_min">min safe value</label>
+        <input
+            min="0" max="100000"
+            id="glucose_min"
+            name="glucose_min"
+            type="number"
+            step="0.1"
+            value={{this.blood_glucose_record.safe_threshold_min}}
+            required
+        />
+    </div>
+    <div>
+        <label for="glucose_max">max safe value</label>
+        <input
+            min="0" max="100000"
+            id="glucose_max"
+            name="glucose_max"
+            type="number"
+            step="0.1"
+            value={{this.blood_glucose_record.safe_threshold_max}}
+            required
+        />
+    </div>
+    </div>
+
+    <div class="weight">
+    <p class="header">weight record</p>
+    <div>
+        <label for="weight_is_required">required</label>
+        <input
+            id="weight_is_required"
+            name="weight_is_required"
+            type="checkbox"
+            {{#if this.weight_record.is_required}}
+                checked
+            {{/if}}
+        />
+    </div>
+    <div>
+        <label for="weight_min">min safe value</label>
+        <input
+            min="0" max="100000"
+            id="weight_min"
+            name="weight_min"
+            type="number"
+            step="0.1"
+            value={{this.weight_record.safe_threshold_min}}
+            required
+        />
+    </div>
+    <div>
+        <label for="weight_max">max safe value</label>
+        <input
+            min="0" max="100000"
+            id="weight_max"
+            name="weight_max"
+            type="number"
+            step="0.1"
+            value={{this.weight_record.safe_threshold_max}}
+            required
+        />
+    </div>
+    </div>
+
+    <div class="insulin">
+    <p class="header">insulin taken record</p>
+    <div>
+        <label for="insulin_is_required">required</label>
+        <input
+            id="insulin_is_required"
+            name="insulin_is_required"
+            type="checkbox"
+            {{#if this.dose_of_insulin_taken_record.is_required}}
+                checked
+            {{/if}}
+        />
+    </div>
+    <div>
+        <label for="insulin_min">min safe value</label>
+        <input
+            min="0" max="100000"
+            id="insulin_min"
+            name="insulin_min"
+            type="number"
+            value={{this.dose_of_insulin_taken_record.safe_threshold_min}}
+            required
+        />
+    </div>
+    <div>
+        <label for="insulin_max">max safe value</label>
+        <input
+            min="0" max="100000"
+            id="insulin_max"
+            name="insulin_max"
+            type="number"
+            value={{this.dose_of_insulin_taken_record.safe_threshold_max}}
+            required
+        />
+    </div>
+    </div>
+
+    <div class="exercise">
+    <p class="header">exercise record</p>
+    <div>
+        <label for="exercise_is_required">required</label>
+        <input
+            id="exercise_is_required"
+            name="exercise_is_required"
+            type="checkbox"
+            {{#if this.exercise_record.is_required}}
+                checked
+            {{/if}}
+        />
+    </div>
+    <div>
+        <label for="exercise_min">min safe value</label>
+        <input
+            min="0" max="100000"
+            id="exercise_min"
+            name="exercise_min"
+            type="number"
+            value={{this.exercise_record.safe_threshold_min}}
+            required
+        />
+    </div>
+    <div>
+        <label for="exercise_max">max safe value</label>
+        <input
+            min="0" max="100000"
+            id="exercise_max"
+            name="exercise_max"
+            type="number"
+            value={{this.exercise_record.safe_threshold_max}}
+            required
+        />
+    </div>
+    </div>
+
+    <div class="button">
+        <button type="submit">save change</button>
+    </br>
+
+</form>
+{{/with}}
+
+<script language="javascript">
+    function toVaild() {
+        var glucose_min = document.getElementById("glucose_min").value;
+        var glucose_max = document.getElementById("glucose_max").value;
+        if (Number(glucose_min) > Number(glucose_max)) {
+            alert("invalid safe rage for blood glucose");
+            return false;
+        }
+        var insulin_min = document.getElementById("insulin_min").value;
+        var insulin_max = document.getElementById("insulin_max").value;
+        if (Number(insulin_min) > Number(insulin_max)) {
+            alert("invalid safe rage for insulin taken");
+            return false;
+        }
+        var weight_min = document.getElementById("weight_min").value;
+        var weight_max = document.getElementById("weight_max").value;
+        if (Number(weight_min) > Number(weight_max)) {
+            alert("invalid safe rage for weight");
+            return false;
+        }
+        var exercise_min = document.getElementById("exercise_min").value;
+        var exercise_max = document.getElementById("exercise_max").value;
+        if (Number(exercise_min) > Number(exercise_max)) {
+            alert("invalid safe rage for exercise");
+            return false;
+        }
+        return true;
+    }
+</script>

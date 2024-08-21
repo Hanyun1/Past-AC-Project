@@ -1,0 +1,48 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../home/about-diabetes">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Clinician Login</div>
+    </div>
+</header>
+
+
+{{#each flash}}
+    <p class="errorLogin">{{this}}</p>
+{{/each}}
+
+<form class="login" action="/clinicianLogin" method="post">
+    <div class="info_block">
+        <label for="username">Username</br>
+        <input
+            id="username"
+            name="username"
+            type="text"
+            autocomplete="username"
+            required
+            autofocus
+        />
+    </div>
+    <div class="info_block">
+        <label for="password">Password</br>
+        <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="password"
+            required
+        />
+    </div>
+    <div>
+        <button type="submit">Log In</button>
+    </div>
+</form>
+
+<div class="homebox">
+    <a class="text" href="/home/about-diabetes">about diabetes</br>
+    <a class="text" href="/home/about-this-website">about this website</a>
+</div>
+

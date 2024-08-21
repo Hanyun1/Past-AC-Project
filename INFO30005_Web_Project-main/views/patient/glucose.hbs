@@ -1,0 +1,35 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../entry_today">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Blood Glucose</div>
+    </div>
+</header>
+
+<div class="entity-containner">
+    <i class="bx bxs-donate-blood"></i>
+
+    <div class="text">Please enter your blood-glucose-level today</div>
+
+    <form id="form" action="../entry_today/glucose" method="POST">
+        <input name="value" class="number-box" id="number-box" type="number" onkeyup="validNumBox(this, isCountType)"></input>
+        
+        <div class="mark">(nmol/L)</div>
+        
+        <div class="text">Comment (optional)</div>
+        
+        <textarea name="comment" style=null id="comment-box" onkeyup="checkCommentBox(this)" class="comment-box" type="text" placeholder="Enter...(no more than 100 words)"></textarea>
+        <div></div>
+
+        <a onclick="return confirm(this, isCountType)" href="../entry_today">
+            <span class="confirm">Confirm</span>
+        </a>    
+    </form>
+</div>
+
+<script>
+    var isCountType = false
+</script>

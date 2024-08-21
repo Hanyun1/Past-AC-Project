@@ -1,0 +1,35 @@
+{{#with data}}
+    <header>
+        <div class="top-bar">
+            <div class="return">
+                <a href="../{{this._id}}">
+                    <i class="bx bx-chevron-left btn"></i>
+                </a>
+            </div>
+            <div class="name">Support Message</div>
+        </div>
+    </header>
+
+    <div class="content-note">
+        <p class="title-note">Enter Support Message</p>
+
+        <form
+            id="form"
+            action="/home/clinician_dashboard/patient/message/{{this._id}}"
+            method="post"
+        >
+
+            <textarea
+                name="support_message"
+                class="note-box"
+                type="text"
+                placeholder="Enter...(no more than length 100)"
+                maxlength="100"
+            ></textarea>
+
+            <div></div>
+
+            <button type="submit" class="cbutton-n">Save</button>
+        </form>
+    </div>
+{{/with}}

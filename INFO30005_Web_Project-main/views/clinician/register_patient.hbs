@@ -1,0 +1,334 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../clinician_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Register New Patient</div>
+    </div>
+</header>
+
+
+<form
+    class="register_patient"
+    action="/home/clinician_dashboard/register_patient"
+    method="post"
+    onsubmit="return toVaild()"
+>
+
+    <div class="info_block">
+        <label for="email">Username (email)</label>
+        <input id="email" 
+               name="email" 
+               type="email" 
+               {{#with data}}value={{this.email}}{{/with}} 
+               autofocus 
+               required 
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="password">Password</label>
+        <input
+            id="password"
+            name="password"
+            type="text"
+            minlength="8"
+            {{#with data}}value={{this.password}}{{/with}}
+            required
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="given_name">Given name</label>
+        <input id="given_name" 
+               name="given_name" 
+               type="text" 
+               {{#with data}}value={{this.given_name}}{{/with}}
+               required 
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="family_name">Family name</label>
+        <input id="family_name" 
+               name="family_name" 
+               type="text" 
+               {{#with data}}value={{this.family_name}}{{/with}}
+               required 
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="screen_name">Screen name</label>
+        <input id="screen_name" 
+               name="screen_name" 
+               type="text" 
+               {{#with data}}value={{this.screen_name}}{{/with}}
+               required 
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="year_of_birth">Year of birth</label>
+        <input
+            id="year_of_birth"
+            name="year_of_birth"
+            type="number"
+            min="1000"
+            max="9999"
+            {{#with data}}value={{this.year_of_birth}}{{/with}}
+            required
+        />
+    </div>
+
+    <div class="info_block">
+        <label for="text_bio">Text bio</br>
+        <textarea id="text_bio" 
+                  name="text_bio" 
+                  type="text"
+                  maxlength="100" 
+                  required
+        >{{#with data}}{{this.text_bio}}{{/with}}</textarea>
+    </div>
+
+
+    <div class="info_block">
+        <label for="bgr">Blood-glucose-level required</label>
+        <input
+            id="bgr"
+            name="bgr"
+            type="checkbox"
+            value="false"
+            onclick="show_threshold(this, bgr_threshold)"
+        />
+    </div>
+
+    <div class="threshold" id="bgr_threshold" style="display: none;">
+        <div class="info_block">
+            <label for="bgr_min">Minumun threshold</label>
+            <input id="bgr_min" 
+                   name="bgr_min" 
+                   type="number" 
+                   step="0.1"
+                   min="0" 
+                   max="100000"
+                   value="4"
+            />
+            <label class="mark" for="bgr_min">(nmol/L)</label>
+        </div>
+
+        <div class="info_block">
+            <label for="bgr_max">Maximum threshold</label>
+            <input id="bgr_max" 
+                   name="bgr_max" 
+                   type="number" 
+                   step="0.1"
+                   min="0" 
+                   max="100000" 
+                   value="10"
+            />
+            <label class="mark" for="bgr_min">(nmol/L)</label>
+        </div>
+    </div>
+    
+
+    <div class="info_block">
+        <label for="wr">Weight required</label>
+        <input
+            id="wr"
+            name="wr"
+            type="checkbox"
+            value="false"
+            onclick="show_threshold(this, wr_threshold)"
+            {{!-- {{#with data}}checked={{this.wr}}{{/with}} --}}
+        />
+    </div>
+
+    <div class="threshold" id="wr_threshold" style="display: none;">
+        <div class="info_block">
+            <label for="wr_min">Minumun threshold</label>
+            <input id="wr_min" 
+                   name="wr_min" 
+                   type="number" 
+                   step="0.1"
+                   min="0" 
+                   max="100000"
+                   value="50"
+            />
+            <label class="mark" for="wr_min">(Kg)</label>
+        </div>
+
+        <div class="info_block">
+            <label for="wr_max">Maximum threshold</label>
+            <input id="wr_max" 
+                   name="wr_max" 
+                   type="number" 
+                   step="0.1"
+                   min="0" 
+                   max="100000" 
+                   value="150"
+            />
+            <label class="mark" for="wr_min">(Kg)</label>
+        </div>
+    </div>
+
+
+    <div class="info_block">
+        <label for="doitr">Dose-of-insulin-taken required</label>
+        <input
+            id="doitr"
+            name="doitr"
+            type="checkbox"
+            value="false"
+            onclick="show_threshold(this, doitr_threshold)"
+            {{!-- {{#with data}}checked=!{{this.doitr}}{{/with}} --}}
+            
+        />
+    </div>
+
+    <div class="threshold" id="doitr_threshold" style="display: none;">
+        <div class="info_block">
+            <label for="doitr_min">Minumun threshold</label>
+            <input id="doitr_min" 
+                   name="doitr_min" 
+                   type="number" 
+                   min="0" 
+                   max="100000"
+                   value="1"
+            />
+            <label class="mark" for="doitr_min">(Dose)</label>
+        </div>
+
+        <div class="info_block">
+            <label for="doitr_max">Maximum threshold</label>
+            <input id="doitr_max" 
+                   name="doitr_max" 
+                   type="number" 
+                   min="0" 
+                   max="100000" 
+                   value="2"
+            />
+            <label class="mark" for="doitr_min">(Dose)</label>
+        </div>
+    </div>
+
+
+    <div class="info_block">
+        <label for="er">Exercise required</label>
+        <input
+            id="er"
+            name="er"
+            type="checkbox"
+            value="false"
+            onclick="show_threshold(this, er_threshold)"
+            {{!-- {{#with data}}checked={{this.er}}{{/with}} --}}
+        />
+    </div>
+
+    <div class="threshold" id="er_threshold" style="display: none;">
+        <div class="info_block">
+            <label for="er_min">Minumun threshold</label>
+            <input id="er_min" 
+                   name="er_min" 
+                   type="number"
+                   min="0" 
+                   max="100000"
+                   value="1000"
+            />
+            <label class="mark" for="er_min">(Step)</label>
+        </div>
+
+        <div class="info_block">
+            <label for="er_max">Maximum threshold</label>
+            <input id="er_max" 
+                   name="er_max" 
+                   type="number" 
+                   min="0" 
+                   max="100000" 
+                   value="30000"
+            />
+            <label class="mark" for="er_min">(Step)</label>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+
+<script language="javascript">
+    function show_threshold(obj, threshold) {
+        if(obj.checked) {
+            obj.value = "true";
+            threshold.style = null;
+            return;
+        } else {
+            obj.value = "false";
+            threshold.style = "display: none;";
+        }
+    }
+
+    function default_threshold() {
+        if(document.getElementById("bgr_min").value == "") {
+            document.getElementById("bgr_min").value = 4
+        }
+        if(document.getElementById("bgr_max").value == "") {
+            document.getElementById("bgr_max").value = 10
+        }
+        if(document.getElementById("wr_min").value == "") {
+            document.getElementById("wr_min").value = 40
+        }
+        if(document.getElementById("wr_max").value == "") {
+            document.getElementById("wr_max").value = 150
+        }
+        if(document.getElementById("doitr_min").value == "") {
+            document.getElementById("doitr_min").value = 1
+        }
+        if(document.getElementById("doitr_max").value == "") {
+            document.getElementById("doitr_max").value = 2
+        }
+        if(document.getElementById("er_min").value == "") {
+            document.getElementById("er_min").value = 100
+        }
+        if(document.getElementById("er_max").value == "") {
+            document.getElementById("er_max").value = 30000
+        }
+    }
+
+    function toVaild() {
+        default_threshold();
+        var glucose_min = document.getElementById("bgr_min").value;
+        var glucose_max = document.getElementById("bgr_max").value;
+        if (Number(glucose_min) > Number(glucose_max)) {
+            alert("invalid safe rage for blood glucose");
+            return false;
+        }
+        var insulin_min = document.getElementById("doitr_min").value;
+        var insulin_max = document.getElementById("doitr_max").value;
+        if (Number(insulin_min) > Number(insulin_max)) {
+            alert("invalid safe rage for insulin taken");
+            return false;
+        }
+        var weight_min = document.getElementById("wr_min").value;
+        var weight_max = document.getElementById("wr_max").value;
+        if (Number(weight_min) > Number(weight_max)) {
+            alert("invalid safe rage for weight");
+            return false;
+        }
+        var exercise_min = document.getElementById("er_min").value;
+        var exercise_max = document.getElementById("er_max").value;
+        if (Number(exercise_min) > Number(exercise_max)) {
+            alert("invalid safe rage for exercise");
+            return false;
+        }
+        return true;
+    }
+
+</script>
+
+{{#with data}}
+    <script>alert("{{this.message}}")</script>
+{{/with}}

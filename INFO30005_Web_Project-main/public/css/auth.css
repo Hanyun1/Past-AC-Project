@@ -1,0 +1,118 @@
+:root {
+    --trans: all 0.4s ease;
+}
+
+/* .register_patient textarea:invalid,
+.register_patient input:not(.hide-hints):invalid {
+    border: 2px solid red;
+} */
+
+.errorLogin {
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 28px;
+    color: red;
+    background-color: #f6f4f0;
+}
+
+.register_patient {
+    margin-top: 100px;
+    margin-left: 200px;
+    margin-bottom: 200px;
+    font-size: 28px;
+    justify-content: center;
+}
+
+.login {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    font-size: 28px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.homebox {
+    margin-bottom: 200px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.homebox .text {
+    color: darkblue;
+    text-decoration: underline;
+}
+
+.login input {
+    margin-top: 10px;
+}
+
+.info_block {
+    margin-bottom: 50px;
+}
+
+.register_patient .threshold {
+    margin-left: 130px;
+    font-size: 20px;
+}
+
+.register_patient .threshold input {
+    min-width: 100px;
+}
+
+.register_patient .threshold .mark {
+    color: #545961c5;
+    font-size: 15px;
+}
+
+.info_block input {
+    margin-left: 10px;
+    font-weight: 300;
+    color: #334157da;
+    background-color: #f6f4f0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-text-fill-color: #334157da !important;
+    box-shadow: 0 0 0 100px #f6f4f0 inset;
+}
+
+.info_block textarea {
+    width: 600px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 150px;
+    font-weight: 300;
+    color: #334157c5;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f6f4f0;
+}
+
+.login button,
+.register_patient button {
+    font-weight: bold;
+    color: #f6f4f0;
+    text-align: center;
+    background-color: #1c3355;
+    width: 120px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 13px;
+    margin-top: 30px;
+}
+
+.login button:hover,
+.register_patient button:hover {
+    background-color: #f6f4f0;
+    color: #1c3355;
+    transition: var(--trans);
+}

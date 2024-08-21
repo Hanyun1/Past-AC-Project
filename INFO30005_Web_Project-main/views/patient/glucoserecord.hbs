@@ -1,0 +1,52 @@
+
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../patient_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">View glucose record</div>
+    </div>
+</header>
+        
+<div class="content">
+    <div class="history-wrap-left">
+        <table class="history-table">
+            <tbody>
+                <tr class="heading" id="heading1">
+                    <th>glucose</th>
+                </tr>
+                <tr class="heading" id="heading2">
+                    <th>Date</th>
+                    <th>Value</th>
+                    <th>Comment</th>
+                </tr>
+                {{#with data}}
+                    {{#each this.blood_glucose_record.record}}
+                    <tr>
+                        <td>{{showDate this.when}}</td>
+                        <td>{{this.value}}</td>
+                        <td>{{this.comment}}</td>
+                    </tr>
+                   {{/each}}
+                {{/with}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="wrap-right">
+    <a href="./my_record">
+        <div class="button">history</div>
+    </a>
+    <a href="./my_weight">
+        <div class="button">weight</div>
+    </a>
+    <a href="./my_insulin">
+        <div class="button">insulin</div>
+    </a>
+    <a href="./my_exercise">
+        <div class="button">exercise</div>
+    </a>
+</div>

@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    height: 270px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.phonenum {
+    top: 0;
+    height: 40px;
+    text-align: center;
+    color: white;
+    background: #1c3355;
+}
+
+@media only screen and (max-width: 600px) {
+    .phonenum .text {
+        font-size: x-small;
+    }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 700px) {
+    .content .text .paragraph{
+        margin-right: 15%;
+    }
+}
+
+.text {
+    line-height: 37px;
+}
+
+.text a {
+    color: #f5bb1c;
+}
+
+.wrap {
+    margin-left: 30px;
+    padding: 20px;
+    height: 130px;
+}
+
+.logo {
+    margin-top: 19px;
+}
+
+.custom-logo {
+    margin-left: 30px;
+    float: left;
+    height: 86px;
+}
+
+@media only screen and (max-width: 643px) {
+    .custom-logo {
+        margin-left: -20px;
+        height: 60%;
+        /* width: 50%; */
+    }
+    .top-a {
+        font-size: 90%;
+    }
+}
+
+.headertext {
+    float: left;
+    width: auto;
+    height: auto;
+    max-width: 350px;
+    max-height: 85px;
+}
+
+.name {
+    font-weight: bold;
+    margin-left: 40px;
+    font-size: 36px;
+}
+
+.slogan {
+    margin-left: 100px;
+    font-size: 22px;
+    font-family: "Segoe print", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media only screen and (max-width: 710px) {
+    .name {
+        margin-left: 10px;
+        font-size: 25px;
+    }
+    .slogan {
+        margin-left: 90px;
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 710px) {
+    .login {
+        float: right;
+        margin-right: 40px;
+        margin-top: 23px;
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    .login {
+        float: right;
+        margin-top: 15px;
+        margin-left: 30px;
+    }
+    .login div a {
+        font-size: 3px;
+    }
+}
+
+.login div a {
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: #1c3355;
+    color: white;
+}
+
+.login .clinician {
+    margin-top: 14px;
+}
+
+nav {
+    background-color: #f5bb1c;
+    height: 50px;
+    width: 100%;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 17px;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+}
+
+.top-menu {
+    margin-top: 6px;
+    margin-left: 130px;
+}
+
+nav .top-a {
+    flex: 0 0 33%;
+    display: inline-block;
+    /* margin: 10px 20px 10px 20px; */
+}
+
+nav .top-a:a {
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    padding: 5px;
+}
+
+/* @media only screen and (max-width: 600px) {
+    .top-menu {
+        font-size: 13px;
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+} */
+
+.background {
+    display: block;
+    width: 100%;
+}
+
+.top-content {
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    height: auto;
+    background-color: #1c3355;
+    color: white;
+    font-size: 21px;
+    line-height: 2.5;
+}
+
+.top-content #data {
+    margin-left: 80px;
+    padding-right: 200px;
+    padding-bottom: 60px;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        padding-top: 12px;
+    }
+
+    .top-content #data {
+        padding-right: 30px;
+        margin-left: 30px;
+        font-size: small;
+    }
+}
+
+.top-content #intro {
+    margin-left: 80px;
+    padding-right: 200px;
+    padding-bottom: 60px;
+    line-height: 2;
+}
+
+@media only screen and (max-width: 600px) {
+    .top-content #intro {
+        padding-right: 30px;
+        margin-left: 30px;
+        font-size: small;
+    }
+}
+
+.top-content #heading {
+    font-weight: bold;
+    padding: 20px;
+    margin-left: 60px;
+    padding-top: 30px;
+    font-size: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    .top-content #heading {
+        padding-right: 30px;
+        margin-left: 12px;
+        font-size: medium;
+    }
+}
+
+.top-content #header {
+    font-weight: bold;
+    padding: 20px;
+    margin-left: 60px;
+    padding-top: 30px;
+    font-size: 25px;
+    line-height: 1.75;
+}
+
+@media only screen and (max-width: 600px) {
+    .top-content #header {
+        padding-right: 30px;
+        margin-left: 12px;
+        font-size: medium;
+    }
+}
+
+.content {
+    overflow: hidden;
+    height: auto;
+    color: #4a4a4a;
+}
+
+.content .text {
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    padding: 80px;
+    float: left;
+    width: 950px;
+}
+
+@media only screen and (max-width: 600px) {
+    .content .text {
+        font-size: 8px;
+        width: auto;
+        padding: 40px;
+    }
+}
+
+.heading {
+    font-weight: bold;
+    font-size: 33px;
+}
+
+@media only screen and (max-width: 600px) {
+    .heading {
+        font-size: 17px;
+    }
+}
+
+.content .text .paragraph {
+    padding-top: 30px;
+}
+
+.resources {
+    padding-top: 80px;
+    padding-left: 40px;
+}
+
+.video {
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.video-text {
+    color: #075290;
+    text-decoration: underline;
+}
+
+.resources .links {
+    line-height: 3;
+    color: #075290;
+    text-decoration: underline;
+}
+
+.resources #links {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+footer {
+    height: 120px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer .text {
+    padding-top: 40px;
+}

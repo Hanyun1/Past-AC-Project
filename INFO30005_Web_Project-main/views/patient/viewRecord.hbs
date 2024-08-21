@@ -1,0 +1,52 @@
+
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../patient_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">View record</div>
+    </div>
+</header>
+        
+<div class="content">
+    <div class="history-wrap-left">
+        <table class="history-table-r">
+            <tbody>
+                <tr class="heading" id="heading1">
+                    <th>record</th>
+                </tr>
+                <tr class="heading" id="heading2">
+                    <th>Date</th>
+                    <th>Object</th>
+                    <th>Value</th>
+                    <th>Comment</th>
+                </tr>
+                {{#each data}}
+                    <tr>
+                        <td>{{showDate this.date}}</td>
+                        <td>{{this.type}}</td>
+                        <td>{{this.value}}</td>
+                        <td>{{this.comment}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="wrap-right">
+    <a href="./my_glucose">
+        <div class="button">glucose</div>
+    </a>
+    <a href="./my_weight">
+        <div class="button">weight</div>
+    </a>
+    <a href="./my_insulin">
+        <div class="button">insulin</div>
+    </a>
+    <a href="./my_exercise">
+        <div class="button">exercise</div>
+    </a>  
+</div>

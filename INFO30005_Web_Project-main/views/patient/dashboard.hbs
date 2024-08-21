@@ -1,0 +1,110 @@
+{{#with data}}
+    <div class="index-page">
+        <nav class="sidebar close">
+            <header>
+                <div class="logo-text">
+                    <div class="logo">
+                        <span class="image">
+                            <img src="/logo.png" alt="logo" />
+                        </span>
+                    </div>
+                    <div class="text">
+                        <span class="name">Diabetes@Home</span>
+                    </div>
+                </div>
+                <i class="bx bx-chevron-right btn"></i>
+            </header>
+            <div class="menu">
+                <ul>
+                    <li class="content">
+                        <a href="./patient_dashboard/changePassword">
+                            <i class="bx bxs-user-badge"></i>
+                            <span class="text">Change password</span>
+                        </a>
+                    </li>
+                    <li class="content">
+                        <a href="./patient_dashboard/my_record">
+                            <i class="bx bx-stats"></i>
+                            <span class="text">View record</span>
+                        </a>
+                    </li>
+                    <li class="content">
+                        <a href="./patient_dashboard/my_badge">
+                            <i class="bx bxs-award"></i>
+                            <span class="text">My Badges</span>
+                        </a>
+                    </li>
+                    <li class="content">
+                        <a href="/home/about-diabetes">
+                            <i class="bx bx-health"></i>
+                            <span class="text">About Diabetes</span>
+                        </a>
+                    </li>
+                    <li class="content">
+                        <a href="/home/about-this-website">
+                            <i class="bx bxs-info-circle"></i>
+                            <span class="text">About Us</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <form class="sign-out" action="/logoutPatient" method="post">
+                <button class="logout" type="submit">
+                    <div class="bottom">
+                        <li class="content">
+                            <a>
+                                <i class="bx bx-log-out"></i>
+                                <span class="text">Log Out</span>
+                            </a>
+                        </li>
+                    </div>
+                </button>
+            </form>
+
+        </nav>
+        <div class="main-content">
+            <div class="welcome-content">
+                <div class="welcome">
+                    <h1>Welcome Back !</h1>
+                </div>
+                <div class="patient-name">
+                    <h2>{{this.screen_name}}</h2>
+                </div>
+            </div>
+            <div class="message">
+                <span class="doctor">message from docter:</span>
+                <span
+                    class="text"
+                    style="min-width:80px; min-height:40px"
+                >{{this.support_message}}</span>
+            </div>
+            <div class="selections">
+                <span class="button">
+                    <a href="./patient_dashboard/entry_today">
+                        <i class="bx bxs-data"></i>
+                        <span class="text">Entry today</span>
+                    </a>
+                </span>
+                <span class="button">
+                    <a href="./patient_dashboard/my_badge">
+                        <i class="bx bxs-award"></i>
+                        <span class="text">My Badges</span>
+                    </a>
+                </span>
+                <span class="button">
+                    <a href="./patient_dashboard/leaderboard">
+                        <i class="bx bxs-trophy"></i>
+                        <span class="text">LeaderBoard</span>
+                    </a>
+                </span>
+            </div>
+        </div>
+        <script>
+            let body = document.querySelector('body'); let sidebar =
+            body.querySelector('.sidebar'); let button =
+            body.querySelector('.btn'); button.addEventListener('click',
+            function() { sidebar.classList.toggle('close'); });
+        </script>
+    </div>
+
+{{/with}}

@@ -1,0 +1,101 @@
+a:hover i,
+.top-bar a:hover .text {
+    color: white;
+}
+
+.entity-grid a:hover .text {
+    color: var(--light-box-color);
+}
+
+.entity-grid .entity:hover {
+    background-color: var(--box-shadow-color);
+    box-shadow: var(--text-header-color) 5px 5px;
+    transition: var(--trans);
+}
+
+.top-bar {
+    overflow: hidden;
+    box-shadow: 2px 2px;
+    box-shadow: #a0b7e0 5px 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 60px;
+    width: 100%;
+    background-color: var(--bar-color);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.top-bar .return {
+    display: inline-block;
+    margin: 17px;
+    background-color: var(--body-color);
+    border-radius: 15px;
+    box-shadow: #a0b7e0 2px 2px;
+    font-size: 25px;
+}
+
+.top-bar .name {
+    display: inline-block;
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    color: var(--text-header-color);
+}
+
+.sign {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.entity-grid {
+    margin-top: 30px;
+    margin-bottom: 90px;
+    width: 95%;
+    display: inline-grid;
+    /* grid-template-columns: repeat(4, 1fr);*/
+
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, 210px);
+    /* grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 300px 300px;
+    grid-auto-rows: minmax(100px, 200px); */
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.entity-grid .entity {
+    /* display: inline-block; */
+    padding: 10px;
+    box-shadow: #a0b7e0 5px 5px;
+    height: 300px;
+    width: 210px;
+    background: rgb(243, 243, 243);
+    border-radius: 20px;
+    text-align: center;
+}
+
+.entity .text {
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.entity .value {
+    margin-top: 80px;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-header-color);
+}
+
+.entity i {
+    margin-top: -10px;
+    font-size: 100px;
+    font-weight: bold;
+    color: var(--text-color);
+}

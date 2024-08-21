@@ -1,0 +1,39 @@
+{
+    "name": "diabetes_at_home",
+    "version": "1.0.0",
+    "description": "presented by pyforest",
+    "main": "app.js",
+    "scripts": {
+        "setup": "npm install",
+        "start": "node app.js",
+        "app": "nodemon app.js",
+        "prettier": "prettier --single-quote --no-semi --tab-width 4 --write**/*.js *.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Kaixuan Zhang, Ruijie Gu, Siying Liu, Hanyun Zhang",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "bcryptjs": "^2.4.3",
+        "config": "^3.3.7",
+        "cors": "^2.8.5",
+        "dotenv": "^16.0.0",
+        "express": "^4.17.3",
+        "express-flash": "^0.0.2",
+        "express-handlebars": "^6.0.4",
+        "express-session": "^1.17.2",
+        "express-validator": "^6.14.0",
+        "handlebars": "^4.7.7",
+        "heroku": "^7.60.1",
+        "moment": "^2.29.3",
+        "mongoose": "^6.2.10",
+        "nodemon": "^2.0.15",
+        "passport": "^0.5.2",
+        "passport-local": "^1.0.0"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.0",
+        "prettier": "^2.6.2"
+    }
+}

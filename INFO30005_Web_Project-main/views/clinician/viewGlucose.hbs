@@ -1,0 +1,67 @@
+{{#with data}}
+
+    <header>
+        <div class="top-bar">
+            <div class="return">
+                <a href="../../{{this._id}}">
+                    <i class="bx bx-chevron-left btn"></i>
+                </a>
+            </div>
+            <div class="name">{{this.screen_name}}'s Blood-Glucose History</div>
+        </div>
+    </header>
+
+    <div class="history-wrap-left">
+
+        <table class="history-table">
+            <tbody>
+                <tr class="heading" id="heading1">
+                    <th>blood glucose history</th>
+                    <th>safe range:
+                        {{this.blood_glucose_record.safe_threshold_min}}
+                        -
+                        {{this.blood_glucose_record.safe_threshold_max}}</th>
+                </tr>
+                <tr class="heading" id="heading2">
+                    <th>Date</th>
+                    <th>Value</th>
+                    <th>Comment</th>
+                </tr>
+
+                {{#if (nodata this.blood_glucose_record.record)}}
+                    <tr>
+                        <td>found no data</td>
+                    </tr>
+
+                {{else}}
+                    {{#each this.blood_glucose_record.record}}
+                        <tr>
+                            <td>{{showDate this.when}}</td>
+                            <td>{{this.value}}</td>
+                            <td>{{this.comment}}</td>
+                        </tr>
+                    {{/each}}
+                {{/if}}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="wrap-right">
+        <a href="../glucose/{{this._id}}">
+            <div class="cbutton">glucose</div>
+        </a>
+
+        <a href="../weight/{{this._id}}">
+            <div class="cbutton">weight</div>
+        </a>
+
+        <a href="../insulin/{{this._id}}">
+            <div class="cbutton">insulin</div>
+        </a>
+
+        <a href="../exercise/{{this._id}}">
+            <div class="cbutton">exercise</div>
+        </a>
+    </div>
+
+{{/with}}

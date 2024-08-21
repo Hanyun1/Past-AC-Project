@@ -1,0 +1,38 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../patient_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">LeaderBoard</div>
+    </div>
+</header>
+<div class="leaderboard">
+    {{#with (Top1 data)}}
+    <div class="no1">
+        <div class="name">
+            <p>{{this.name}}</p>
+        </div>
+        <div class="no">
+            <p>No.1</p>
+        </div>
+        <p class="engagement">{{this.rate}}%</p>
+    </div>
+    {{/with}}
+    <div class="ranks" style="margin-bottom: 100px;">
+        <ol>
+            {{#each (Rest data)}}
+            <li class="info">
+                <div class="no">
+                    <p>No.{{Rank @index}}</p>
+                </div>
+                <div class="name">
+                    <p>{{this.name}}</p>
+                </div>
+                <p class="engagement">{{this.rate}}%</p>
+            </li>
+            {{/each}}
+        </ol>
+    </div>
+</div>

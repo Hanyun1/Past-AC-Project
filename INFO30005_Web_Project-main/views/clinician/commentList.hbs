@@ -1,0 +1,46 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="./{{this._id}}">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">Comment List</div>
+    </div>
+</header>
+
+{{! <div class="wrap-top">
+    <div class="logo">
+        <img src="/logo.png" class="custom-logo" />
+    </div>
+    <div class="headertext">
+        <p>Welcome to Diabetes@home</p>
+    </div>
+</div> }}
+
+<div class="wrap-content" style="margin-top:100px">
+    <table class="patient-table">
+        <tbody>
+            <tr class="heading" id="heading1">
+                <th>Comment list</th>
+            </tr>
+            <tr class="heading" id="heading2">
+                <th>Patient name</th>
+                <th>Date</th>
+                <th>Object</th>
+                <th>Comment</th>
+            </tr>
+
+            {{#each data}}
+                <tr>
+                    <td><a
+                            href="/home/clinician_dashboard/patient/{{this.id}}"
+                        >{{this.name}}</a></td>
+                    <td>{{showDate this.date}}</td>
+                    <td>{{this.type}}</td>
+                    <td>{{this.comment}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+<header>
+    <div class="top-bar">
+        <div class="return">
+            <a href="../patient_dashboard">
+                <i class="bx bx-chevron-left btn"></i>
+            </a>
+        </div>
+        <div class="name">My Badge</div>
+    </div>
+</header>
+{{#with e_rate}}
+<div class="my-badge">
+    <div class="progression">
+        <h1>Your current engagement rate is: </h1>
+            <h2>{{this}}%</h2>
+    </div>
+    {{#if (IsValidBadge this)}}
+    <div class="badge">
+        <img src="../../badge.png" alt="" srcset="">
+    </div>
+    <div class="messages">
+        <p>Congratulation! You have earned your badge!</p>
+        <p>You can also check the leaderboard to see</p>
+        <p>who engages more than you do</p>
+        <p>You haven't got the badge.</p>
+        <p>Keep entering the data to earn your own badge</p>
+    </div>
+    {{else}}
+    <div class="badge">
+        <img src="../../badge_not_get.png" alt="" srcset="">
+    </div>
+    <div class="messages">
+        <p>You haven't got the badge.</p>
+        <p>Keep entering the data to earn your own badge</p>
+    </div>
+    {{/if}}
+    <div class="leaderboard-button" style="margin-bottom: 100px;">
+        <a href="./leaderboard">
+            <img src="../../leaderboard button.png" alt="" srcset="">
+        </a>
+    </div>
+</div>
+{{/with}}
